@@ -19,21 +19,21 @@
 		  var expires = "expires="+d.toGMTString();
 		  document.cookie = cname + "=" + cvalue + "; " + expires;
 		}
- function getCookie(cname)
-{
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) 
-  {
-    var c = ca[i].trim();
-    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-  }
-  return "";
-}
+		function getCookie(cname){
+		  var name = cname + "=";
+		  var ca = document.cookie.split(';');
+		  for(var i=0; i<ca.length; i++) 
+		  {
+		    var c = ca[i].trim();
+		    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		  }
+		  return "";
+		}
 		function mchange() {
 			var me=document.getElementById("content")
-			setCookie("content",me.value)
-			alert(me.value)
+			var str=me.value.split("\n").join("\\n")
+			setCookie("content",str)
+			alert(str)
 		}
 	</script>
 </head>
@@ -42,7 +42,8 @@
 <button onclick="mchange()">save</button>
 <script type="text/javascript">
 	var me=document.getElementById("content")
-	me.value=getCookie("content")
+	me.value=getCookie("content").split("\\n").join("\n")
+	// me.value="asd\naas"
 	if('serviceWorker' in navigator) {
 	  navigator.serviceWorker
 	           .register('sw.js',{scope:'/'})
