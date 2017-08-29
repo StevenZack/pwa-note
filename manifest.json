@@ -6,9 +6,9 @@
 		"type":"image/png",
 		"sizes":"144x144"
 	}],
-	"start_url":"/",
-	"scope":"/",
+	"start_url":"/pwa-note/",
+	"scope":"/pwa-note/",
 	"display":"standalone",
-	"background_color":"#0088ff",
-	"theme_color":"#ff8800"
+	"background_color":"#ffffff",
+	"theme_color":"#dddddd"
 }
