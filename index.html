@@ -32,7 +32,7 @@
 		function mchange() {
 			var me=document.getElementById("content")
 			var str=me.value.split("\n").join("\\n")
-			setCookie("content",str)
+			setCookie("content",str,365)
 			alert(str)
 		}
 	</script>
@@ -46,7 +46,7 @@
 	// me.value="asd\naas"
 	if('serviceWorker' in navigator) {
 	  navigator.serviceWorker
-	           .register('sw.js',{scope:'/'})
+	           .register('sw.js',{scope:'/pwa-note/'})
 	           .then(function() { console.log("Service Worker Registered"); });
 	}
 

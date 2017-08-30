@@ -1,9 +1,8 @@
-let version='0.2';
+let version='0.3';
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open('airhorner').then(cache => {
       return cache.addAll([
-        `/pwa-note/`,
         `/pwa-note/index.html`
       ])
       .then(() => self.skipWaiting());
